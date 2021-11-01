@@ -1,4 +1,4 @@
-#Zadatak 1
+# Zadatak 1
 ________________
 Prosjecni indeksi koincidencije:
 ```
