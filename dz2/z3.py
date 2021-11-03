@@ -1,6 +1,5 @@
 import numpy as np
-
-from commons import yield_in_ns, lookup, reverse_lookup
+from commons import yield_in_ns, reverse_lookup, _print_matrix
 
 plaintext = "VERNAM"
 cypher = "DUCTKY"
@@ -38,14 +37,14 @@ def _check(key):
 
 def main():
     x, y = _construct_matrices()
-    print("X: ", x)
-    print("e(X): ", y)
+    _print_matrix(x, "X")
+    _print_matrix(y, "e(X)")
 
     xinv = _invert_2x2(x)
-    print("X^-1: ", xinv)
+    _print_matrix(xinv, "X^-1")
 
     key = (xinv @ y) % 26
-    print("K: ", key)
+    _print_matrix(key, "K")
 
     _check(key)
 

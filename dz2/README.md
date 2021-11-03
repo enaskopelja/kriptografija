@@ -1,5 +1,20 @@
 # Zadatak 1
 ________________
+
+> Vigenereovom sifrom iz otvorenog teksta na hrvatskom jeziku dobiven
+je sifrat:
+
+```UEOIB HFUAE BUVKZ JRLPK NAQAC HTLCR QEWIV MNHBR
+YEUIV RPRCV NSHZR MIPAK HZDKI HPWOC NGLJL QJHSR
+UAMUT HMDLV NGOAJ DUQOM HNDMR MENIF CTLHF FLDSR
+AIOIJ TSLFI HRDNZ OAMES ZZHRZ DSQJZ GOYID CENRZ
+OTLRR MJHMQ ZBDVC IARPI HJDTV KJH
+```
+
+>Odredite najprije duljinu kljucne rijeci, potom samu kljucnu rijec, te
+dekriptirajte sifrat.
+
+## Rjesenje:
 Prosjecni indeksi koincidencije:
 ```
 m: 2	->	0.043
@@ -22,9 +37,9 @@ m: 18	->	0.045
 m: 19	->	0.041
 ```
 
-Vidimo da se IC znacajno povecava na visekratnicima broja 5, slutimo `m=5`.
+Vidimo da se IC znacajno povecava na visekratnicima broja 5, slutimo `m = 5`.
 
-Analizom medusobnog indeksa koincidencije dobivamo sljedecu matricu, u i-tom stupcu nalaze se (u silaznom poretku)
+Analizom medusobnog indeksa koincidencije dobivamo sljedecu matricu, u i-tom stupcu nalaze se (u silaznom poretku od najvjerojatnijeg u nultom retku do manje vjerojatnog u drugom)
 najvjerojatnija i-ta slova kljuca.
 ```
 0 1 2 3 4
@@ -46,7 +61,9 @@ NJIHOVIM DEKRIPTIRANJEM ZABAVLJAO PRIJATELJE
 
 # Zadatak 2
 ______________________________
-Otvoreni tekst: `FRIEDMAN`
+> Sifrirajte otvoreni tekst `FRIEDMAN` pomocu Playfairove sifre s kljucnom rijeci `CRYPTOGRAPHY`
+
+## Rjesenje
 
 Matrica:
 ```
@@ -56,10 +73,25 @@ D E F I J
 K L M N Q
 S U V X Z
 ```
-Sifrat: `EYJFEIFKIXAN`
+
+### Sifriranje:
+`FR` -(X)-> `EY` 
+
+`IE` -(isti redak)-> `JF`
+
+`DM` -(X)-> `FK`
+
+`AN` -(isti stupac)-> `IX`
+
+
+**Sifrat**: `EYJFFKIX`
 
 # Zadatak 3
 __________________
+>Odredite kljuc K u Hillovoj sifri ako je poznato da je `m = 2`, te da
+otvorenom tekstu `VERNAM` odgovara sifrat `DUCTKY`.
+
+## Rjesenje
 ```
 X = 
 | 21  4 |
@@ -84,3 +116,8 @@ K =
 | 7   8 |
 | 3  15 |
 ```
+
+# Pokretanje koda
+`pip install -r requirements.txt`
+
+`python3 PYTHONPATH=$PWD python3 dz2/z${BROJ_ZADATKA}.py`

@@ -1,3 +1,4 @@
+import string
 from collections import Counter
 from typing import Iterable, List
 
@@ -30,7 +31,6 @@ cro_freqs = {
     "Z": 0.023,
 }
 
-alphabet = 'abcdefghijklmnopqrstuvwxyz'.upper()
 DIVIDER = '---------------------------'
 
 
@@ -39,7 +39,7 @@ def reverse_lookup(letter: str) -> int:
 
 
 def lookup(n: int) -> str:
-    return alphabet[n]
+    return string.ascii_uppercase[n]
 
 
 def n_grams(text, n) -> List:
@@ -59,3 +59,13 @@ def yield_in_ns(x: Iterable, n: int) -> List:
 
         curr.append(x)
     yield curr
+
+
+def _print_matrix(matrix, header=None):
+    print()
+    if header:
+        print(header)
+    print(DIVIDER)
+    for row in matrix:
+        print(*row)
+

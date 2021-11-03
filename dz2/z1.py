@@ -114,7 +114,7 @@ def _decrypt(key: str):
     for i, c in enumerate(cypher):
         ord_c = reverse_lookup(c)
         ord_key = reverse_lookup(key[i % m])
-        yield lookup(ord_c-ord_key)
+        yield lookup(ord_c - ord_key)
 
 
 def main():
