@@ -121,7 +121,9 @@ Iako je `NR` validna opcija (gledano sa strane dekripcije zadane sifre), dalje n
 niske incidencije birama `NR` u hrvatskom jeziku.
 
 Nadalje nastavljamo s trazenjem najvjerojatnijih nastavaka prefiksa kandidata, nuzno je uzeti barem 7 najvjerojatnijih jer
-inace u koraku biranja kandidata za 4. slovo otpada `PRED`.
+inace u koraku biranja kandidata za 4. slovo otpada `PRED`. 
+
+U trazenju najvjerojatnijeg sljedeceg slova (uz neki zadani prefiks) sluzim se rjecnikom s http://rjecnik.hr/, kod u `dictionary.py`.
 
 ### Trece slovo:
 moguci prefiksi: `PRS NAG, PRE NAS`
