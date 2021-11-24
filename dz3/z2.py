@@ -1,9 +1,6 @@
 from commons import reverse_lookup, lookup
 from dictionary import most_common_next_letter
 
-E1 = "TYHKXPWB"
-E2 = "RHVAKWES"
-
 
 def _match(*, p1_candidates, l1, l2, p2_candidates=None):
     if p2_candidates is None:
@@ -31,33 +28,43 @@ def _filter(solution):
 
 
 def _list_solution(*, index, solution):
-    print(f"Kandidati duljine {index+1}:")
+    print(f"Kandidati duljine {index + 1}:")
     for s in solution:
         print(*s, end=", ")
     print()
 
 
-def main():
+def main(*, e1, e2, silent=False):
     solution = {('', '')}
     for index, candidates in enumerate(["SPND", "AEIOUR"]):
         solution = {
             x
-            for match in _match(p1_candidates=candidates, l1=E1[index], l2=E2[index])
+            for match in _match(p1_candidates=candidates, l1=e1[index], l2=e2[index])
             for x in _merge(solution, match)
         }
-        _list_solution(index=index, solution=solution)
+        if not silent:
+            _list_solution(index=index, solution=solution)
 
-    for index in range(2, len(E1)):
+    for index in range(2, len(e1)):
         solution = {
             (p1 + x1, p2 + x2) for p1, p2 in solution for x1, x2 in _match(
-                p1_candidates=most_common_next_letter(p1, len(E1), k=10),
-                p2_candidates=most_common_next_letter(p2, len(E1), k=10),
-                l1=E1[index],
-                l2=E2[index],
+                p1_candidates=most_common_next_letter(p1, len(e1), k=10),
+                p2_candidates=most_common_next_letter(p2, len(e1), k=10),
+                l1=e1[index],
+                l2=e2[index],
             )
         }
-        _list_solution(index=index, solution=solution)
+        if not silent:
+            _list_solution(index=index, solution=solution)
+    return solution
+
+
+def _test():
+    result = main(e1="CRUDLHGCAS", e2="XVXDUXKUIA", silent=True)
+    assert len(result) == 1
+    assert 'NEPOBJEDIV', 'SAMOSTALAN' == sorted(result.pop())
 
 
 if __name__ == '__main__':
-    main()
+    _test()
+    main(e1="TYHKXPWB", e2="RHVAKWES")

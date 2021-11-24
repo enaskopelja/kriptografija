@@ -82,5 +82,5 @@ if __name__ == '__main__':
     Es = [0b110010, 0b110110]
     Cc = [0b0001, 0b1000]
 
-    main()
     _test_code()
+    main()
