@@ -42,7 +42,7 @@ N D O A R  0.40:0.60
 ```
 
 Srednji odnos samoglasnika i suglasnika je identican u obje matrice, `58.6%` suglasnika tj. `41.4%` samoglasnika, ipak dimenzija `(15, 5)` je nesto laksa za
-analizu, a njeni omjeri su konstantniji pa prvo pokusavamo s njom.
+analizu, a njezini omjeri su nesto konstantniji pa prvo pokusavamo s njom.
 
 Matrica frekvencija:
 ```
@@ -53,7 +53,7 @@ Matrica frekvencija:
 4 5 0 2 -
 ```
 
-Ako izbacimo fenkvencije manje od 2:
+Ako izbacimo frekvencije manje od 2:
 ```
 - 2 9 3 -
 2 - 4 4 2
@@ -173,6 +173,7 @@ __________________
 > E2 = 000010, E∗2 = 110110, C'2 = 1000.
 
 ## Rjesenje
+> Kod u `z3.py`
 ```
 Test 1:  000101 001001 011000 011001 101100 101101 110001 111101
 Test 2:  001111 011111 101011 111011
