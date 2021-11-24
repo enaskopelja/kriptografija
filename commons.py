@@ -69,3 +69,13 @@ def _print_matrix(matrix, header=None):
     for row in matrix:
         print(*row)
 
+
+def is_consonant(letter):
+    return letter.upper() not in "AEIOU"
+
+
+MOST_COMMON_CRO_BIGRAMS = """
+AK, AN, AS, AT, AV, CI, DA, ED, EN, IC, IJ, IN,
+IS, JA, JE, KA, KO, LI, NA, NE, NI, NO, OD, OJ,
+OS, OV, PO, PR, RA, RE, RI, ST, TA, TI, VA, ZA
+""".strip().replace(',', '').replace('\n', ' ').split(" ")
