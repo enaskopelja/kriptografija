@@ -120,4 +120,4 @@ K =
 # Pokretanje koda
 `pip install -r requirements.txt`
 
-`python3 PYTHONPATH=$PWD python3 dz2/z${BROJ_ZADATKA}.py`
+`PYTHONPATH=$PWD python3 dz2/z${BROJ_ZADATKA}.py`
