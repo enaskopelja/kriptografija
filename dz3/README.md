@@ -167,8 +167,18 @@ NASTAVAK
 
 # Zadatak 3
 __________________
+> Odredite skupove `test1(E1, E∗1, C'1)` i `test2 (E2, E∗2, C'2)` ako je 
+> ```
+> E1 = 000110, E∗1 = 110010, C'1 = 0001,
+> E2 = 000010, E∗2 = 110110, C'2 = 1000.
+
+## Rjesenje
+```
+Test 1:  000101 001001 011000 011001 101100 101101 110001 111101
+Test 2:  001111 011111 101011 111011
+```
 
 # Pokretanje koda
 `pip install -r requirements.txt`
 
-`python3 PYTHONPATH=$PWD python3 dz2/z${BROJ_ZADATKA}.py`
+`PYTHONPATH=$PWD python3 dz3/z${BROJ_ZADATKA}.py`

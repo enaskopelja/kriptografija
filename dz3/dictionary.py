@@ -56,5 +56,5 @@ def _list_candidates(*, candidates):
 def most_common_next_letter(prefix, word_length=None, k=10):
     hits = lookup(prefix, word_length)
     counter = Counter([x[len(prefix)] for x in hits if len(x) > len(prefix)])
-    _list_candidates(candidates=hits)
+    # _list_candidates(candidates=hits)
     return [x[0].upper() for x in counter.most_common(k)]

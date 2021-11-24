@@ -125,12 +125,15 @@ def _connect(order):
     return [_connect_tuples(order, first, ind) for ind in starts]
 
 
-def main():
+def _input():
+    return map(int, input("Choose pair to add to permutation (separate with ','): ").replace(" ", "").split(","))
+
+
+def main(max_tries=3):
     prime_facors = list(_calc_prime_factors(len(SIFRAT)))
     row_col_candidates = _calc_row_col(prime_facors, col_lb=4, col_ub=16)
     matrix = _calc_best_matrix(candidates=row_col_candidates)
-
-    _print_matrix_with_ratios(matrix, header="Choosing:")
+    print(f"\nChoosing {matrix.shape}")
 
     freq_matrix = _analyze_cols(matrix)
     _print_matrix(freq_matrix, header="Frequency matrix")
@@ -140,12 +143,15 @@ def main():
 
     order = []
     for _ in range(freq_matrix.shape[1] - 1):
-        i, j = map(int, input("Choose pair to add to permutation (separate with ','): ").split(","))
-        assert freq_matrix[i][j] != 0
+        tries = 0
+        i, j = _input()
+        while freq_matrix[i][j] == 0 and tries < max_tries:
+            i, j = _input()
+        if tries == max_tries:
+            raise ValueError("Choice not in accordance with previous choices")
+
         freq_matrix = _cross_out(freq_matrix, i, j)
-
         order.append((i, j))
-
         result = _connect(order)
         _print_matrix(freq_matrix)
 
