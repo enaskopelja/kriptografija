@@ -25,7 +25,7 @@ def main(x, y, verbose=False):
             print()
 
         for x_i, y_i in zip(x, reversed(y)):
-            result = multiply(x_i, y_i, poly_type='hex', mod=[1, 0, 0, 0, 1])
+            result = multiply(x_i, y_i, poly_type='hex')
 
             if verbose:
                 print(f"{x_i} * {y_i} = {pretty(result)}")
@@ -40,5 +40,5 @@ if __name__ == '__main__':
     print(f"-----------TEST--------------")
     print("result: ", main(["03", "01", "01", "02"], ["0B", "0D", "09", "0E"]))
     print(f"----------FINAL--------------")
-    print("result: ", main(["F4", "D3", "31", "F8"], ["01", "D2", "61", "03"], verbose=True))
-    print("result: ", main(["C7", "E8", "C0", "43"], ["9C", "4E", "8D", "90"]))
+    # print("result: ", main(["F4", "D3", "31", "F8"], ["01", "D2", "61", "03"], verbose=True))
+    print("result: ", main(["C7", "E8", "C0", "43"], ["9C", "4E", "8D", "90"], verbose=True))

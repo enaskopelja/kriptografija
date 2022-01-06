@@ -46,16 +46,9 @@ def multiply(
         poly1: Union[HexPolynomial, StrPolynomial],
         poly2: Union[HexPolynomial, StrPolynomial],
         poly_type='str',
-        mod=None,
         verbose=False,
 ):
     poly1, poly2 = map(_hex_to_numpy if poly_type == 'hex' else _str_to_numpy, [poly1, poly2])
-
-    if mod:
-        _, poly1 = np.polydiv(poly1, mod)
-        _, poly2 = np.polydiv(poly2, mod)
-        poly1 %= 2
-        poly2 %= 2
 
     res = np.polymul(poly1, poly2)
     res %= 2
@@ -79,4 +72,3 @@ def _test():
 if __name__ == '__main__':
     _test()
     print(pretty(main("x7 + x6 + x5 + x3 + x + 1", "x6 + x4 + x + 1", verbose=True)))
-    # print(pretty(main("x7 + x6 + x4 + x2 + x + 1", "x6 + x5 + x2 + 1")))
