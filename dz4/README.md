@@ -1,39 +1,39 @@
 # Zadatak 1
 > Odredite produkt polinoma 
-`x^7 + x^6 + x^4 + x^2 + x + 1` i `x^6 + x^5 + x^2 + 1`
+`x^7 + x^6 + x^5 + x^3 + x + 1` i `x6 + x4 + x + 1`
 u polju `GF(28)`, definiranom kao `Z2[X]/(x^8 + x^4 + x^3 + x + 1).`
 
-`(x^7 + x^6 + x^4 + x^2 + x + 1) * (x^6 + x^5 + x^2 + 1) = 1 + x^2 + x^3 + x^6 + x^8 + x^10 + x^12 + x^13`
+`(x^7 + x^6 + x^5 + x^3 + x + 1) * (x6 + x4 + x + 1) = 1 + x^2 + x^3 + x^6 + x^8 + x^10 + x^12 + x^13`
 
 konačno: `1 + x^2 + x^3 + x^6 + x^8 + x^10 + x^12 + x^13 (mod g(x)) = x^2 + x^3 + x^4 + x^6 + x^7`
-`
+
 # Zadatak 2
 > Izračunajte:
 >
-> ```(C7 x^3 + E8 x^2 + C0 x + 43) ⊗ (9C x^3 + 4E x^2 + 8D x + 90).```
+> ```(F4 x3 + D3 x2 + 31 x + F8) ⊗ (01 x3 + D2 x2 + 61 x + 03)```
 
 ```
-43 * 90 = x + x^3 + x^7
-C7 * 8D = x + x^2 + x^3 + x^5 + x^6 + x^7
-E8 * 4E = 1 + x + x^2 + x^3 + x^6
-C0 * 9C = x^2 + x^4
+F8 * 03 = 1 + x + x^4
+F4 * 61 = x^2 + x^4
+D3 * D2 = x^2 + x^3 + x^4 + x^5 + x^6 + x^7
+31 * 01 = 1 + x^4 + x^5
 
-C0 * 90 = 1 + x + x^5 + x^6
-43 * 8D = x^2 + x^3 + x^5 + x^7
-C7 * 4E = 1 + x + x^3 + x^4 + x^5 + x^6 + x^7
-E8 * 9C = x + x^2 + x^3 + x^4 + x^7
+31 * 03 = 1 + x + x^4 + x^6
+F8 * 61 = x + x^2 + x^3 + x^5 + x^7
+F4 * D2 = 1 + x^4 + x^5 + x^6 + x^7
+D3 * 01 = 1 + x + x^4 + x^6 + x^7
 
-E8 * 90 = x + x^4
-C0 * 8D = x^5 + x^6
-43 * 4E = x^2 + x^4 + x^6 + x^7
-C7 * 9C = 1 + x^2 + x^3 + x^5 + x^6 + x^7
+D3 * 03 = x + x^2 + x^3 + x^5 + x^6
+31 * 61 = 1 + x + x^2 + x^3 + x^4 + x^5 + x^7
+F8 * D2 = x + x^2 + x^3 + x^4 + x^6
+F4 * 01 = x^2 + x^4 + x^5 + x^6 + x^7
 
-C7 * 90 = x + x^2 + x^3 + x^4 + x^5 + x^7
-E8 * 8D = x^2 + x^4 + x^5 + x^6
-C0 * 4E = x + x^3
-43 * 9C = 1 + x + x^4 + x^5 + x^7
+F4 * 03 = 1 + x + x^2
+D3 * 61 = x^2 + x^3 + x^4 + x^5 + x^7
+31 * D2 = x^3 + x^4 + x^6
+F8 * 01 = x^3 + x^4 + x^5 + x^6 + x^7
 ________________________________________
-result:  ad
+result:  75
 ```
 # Zadatak 3
 
@@ -41,7 +41,7 @@ result:  ad
 je `n = p · q`. Odaberite peteroznamenkasti broj `e` koji je relativno prost
 sa `ϕ(n)`. 
 > 
-> Sifrirajte otvoreni tekst `x = 123407` pomoću RSA kriptosustava s javnim ključem `(n, e)`. Odredite pripadni
+> Sifrirajte otvoreni tekst `x = 123645` pomoću RSA kriptosustava s javnim ključem `(n, e)`. Odredite pripadni
 tajni ključ `d`.
 ```
 (p, q) = (2719, 1373)
