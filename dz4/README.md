@@ -33,8 +33,9 @@ D3 * 61 = x^2 + x^3 + x^4 + x^5 + x^7
 31 * D2 = x^3 + x^4 + x^6
 F8 * 01 = x^3 + x^4 + x^5 + x^6 + x^7
 ________________________________________
-result:  75
+result:  1BX^3 + 7BX^2 + DFX + CA
 ```
+
 # Zadatak 3
 
 >  Odaberite dva različita četveroznamenkasta prosta broja `p` i `q`. Neka

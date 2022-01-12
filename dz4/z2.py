@@ -33,7 +33,15 @@ def main(x, y, verbose=False):
             d[i, 8 - result.shape[0]:] += result
             d[i] %= 2
 
-    return _parse(np.sum(d, axis=0) % 2)
+    return "".join(
+        list(
+            map(
+                lambda x, y: x.upper() + y if x != "00" else "",
+                list(map(_parse, d % 2)),
+                ["X^3 + ", "X^2 + ", "X + ", ""],
+            )
+        )
+    )
 
 
 if __name__ == '__main__':
@@ -41,4 +49,3 @@ if __name__ == '__main__':
     print("result: ", main(["03", "01", "01", "02"], ["0B", "0D", "09", "0E"]))
     print(f"----------FINAL--------------")
     print("result: ", main(["F4", "D3", "31", "F8"], ["01", "D2", "61", "03"], verbose=True))
-    # print("result: ", main(["C7", "E8", "C0", "43"], ["9C", "4E", "8D", "90"], verbose=True))
